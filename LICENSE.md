@@ -1,0 +1,1 @@
+This code is free for everyone to view, use or whatever. It's a simple student-project.
