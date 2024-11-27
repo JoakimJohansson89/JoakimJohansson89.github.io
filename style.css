@@ -64,13 +64,13 @@ main {
 }
 
 footer{
-    text-align: center !important; 
-    background: #333 !important;
-    color: #fff !important;
-    padding: 1rem !important;
-    position: fixed !important;
-    width: 100% !important;
-    bottom: 0 !important;
+    text-align: center; 
+    background: #333;
+    color: #fff ;
+    padding: 1rem ;
+    position: fixed ;
+    width: 100% ;
+    bottom: 0 ;
 }
 
 pre {
