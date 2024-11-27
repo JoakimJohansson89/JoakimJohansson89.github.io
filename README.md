@@ -1,1 +1,4 @@
 This is just a humble attempt at trying to get a website running, nothing fancy. There's a neat Gandalf quote generator in there, but other than that it's just some presentational text about myself and contact information.
+The Gandalf Quote Generator has been run on a Render-server so far, but since I choose the free version it has died off. It can quite easily get spun up again, granting the world once more excellent Gandalfish-wisdom to bask in.
+However one of the key components for me to do this project was not only to just code, but to bring a website online and getting it certified and using an actual domain, that's still on the horizon. I'm hoping to add some user-input,
+like a search field or whatever, just to see cross-site-scripting, and what I can do in the code to mitigate hacks on the site. All things in good time.
