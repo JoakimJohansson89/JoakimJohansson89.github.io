@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, inital-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="gandalf.html">Gandalf Wisdom</a>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="project-list">
+                <article class="project">
+                    <h3>Project 1: Network Configuration Backup</h3>
+                    <p>Description: A project consisting of a Python-code, which purpose is to extract
+                        configuration info into a text-file for backup-purpose. Ongoing and incomplete. However since I can't in an affordable way get my hands on a switch this project is currently at a halt.
+                        I'll figure something out on how to get my hands on a network-device but nothing so far. Have a look at the Gandalf tab meanwhile :)
+                        I'll add Github links here once that's sorted.
+                    </p>
+                    <pre><code class="language-python">
+
+
+import time
+import os
+from netmiko import ConnectHandler
+from netmiko.exceptions import NetmikoTimeoutException, NetmikoAuthenticationException
+
+# Device configuraiton for Fortinet
+devices = [
+    {
+        "device_type": "fortinet",
+        "host": "192.168.1.1", # Fortinet Device IP
+        "username" : "your_username",
+        "password" : "your_password",
+        "command": "show full-configuration"
+    },
+    {
+        "device_type": "dlink_ds",
+        "host": "192.168.2.1", # D-Link device IP
+        "username": "dlink_user",
+        "password": "dlink_password",
+        "command": "show running-config",
+    },
+]
+
+def is_reachable(host):
+    """Checks if a device is reachable via ping"""
+    response = os.system(f"ping -c 1 {host} > /dev/null 2>&1")
+    return response == 0
+
+
+def save_configuration(device):
+    """Extracts and saves configuration from a device"""
+    connection = None # Initialize connection variable
+    # Connect to the device
+    try:
+        print(f"Connecting to {device['host']} ({device['device_type']})...")
+        connection = ConnectHandler(**device)
+
+        # Enter enable mode if required (optional for Fortinet, not Cisco though)
+        # connection.enable() # Fortinet does not usually require enable
+
+        # Get the running configuration
+        print(f"Retriving configuraiton using command: {device['command']}...")
+        config = connection.send_command(device["command"])
+
+        # Save the configuration to a file
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        filename = f"{device['device_type']}_config_{device["host"]}_{timestamp}.txt"
+
+        with open(filename, "w") as file:
+            file.write(config)
+
+        print(f"Configuration saved to {filename}")
+    
+    except NetmikoTimeoutException:
+        print(f"Connection to {device['host']} timed out")
+    except NetmikoAuthenticationException:
+        print(f"Authenticatrion failed for {device['host']}")
+    except Exception as e:
+        print(f"An error occured: {e}")
+    finally:
+        # Disconnect only if connection is established
+        if connection:
+            connection.disconnect()
+
+if __name__=="__main__":
+    while True:
+        for device in devices:
+            save_configuration(device)
+        # Wait for a specified time before the next extraction (seconds)
+        time.sleep(60)
+                   </code></pre>
+                </article>
+
+                <article class="project">
+                    <h3>Project 2: Website, which also turned out to be a Gandalf Quote Generator</h3>
+                    <p>Description: The website you're browsing, a simple project of learning some .html/js/css code, and adding some Python on that.
+                        I'm not looking to become a .net developer, simply get some hands on xp of different codes languages and try and build a webpage from scratch.
+                        The website code consists of some filetabs written in html, some css for styling,
+                        and the Gandalf quote generator is a python code Flask app which needs a server to run it. On that there's some JS code for 
+                        "triggering" the Flask app via the website. Also looking to expand the app into a docker environment with docker compose, which triggers the Flask app on startup. 
+                    I'll add Github links to go here:</p>
+
+                </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is just a humble attempt at trying to get a website running, nothing fancy. There's a neat Gandalf quote generator in there, but other than that it's just some presentational text about myself and contact information.
