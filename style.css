@@ -80,12 +80,10 @@ pre {
 }
 
 header {
-    font-family: 'Press Start 2P', sans-serif;
-    font-size: 2rem;
-    text-align: center;
-    color: #ffcc00;
-    text-shadow: 2px 2px #000;
+    background: #333;
+    color: #fff;
     padding: 1rem;
+    text-align: center;
 }
 
 .pixel-border {
