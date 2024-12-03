@@ -118,7 +118,7 @@ pixel-border {
 
 .center-image {
     display: block;
-    width: 40000px !important;
+    width: 400px !important;
     height: auto;
     margin: 50px auto;
     border-radius: 10px;
