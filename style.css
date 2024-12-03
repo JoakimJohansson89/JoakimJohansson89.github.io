@@ -117,7 +117,7 @@ pixel-border {
 }
 
 .retro-image-right {
-    position: absolute;
+    position: center;
     bottom: 10px;
     right: 30%;
     width: 200px !important;
