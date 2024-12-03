@@ -106,22 +106,10 @@ pixel-border {
     color: #fff;
 }
 
-.retro-image-left {
-    position: absolute;
-    bottom: 10px;
-    left: 30%;
-    width: 200px !important;
-    transform: translateX(30%);
+.center-image {
+    display: block;
+    width: 40000px !important;
     height: auto;
-    margin: 0;
-}
-
-.retro-image-right {
-    position: center;
-    bottom: 10px;
-    right: 30%;
-    width: 200px !important;
-    transform: translateX(30%);
-    height: auto;
-    margin: 0;
+    margin: 50px auto;
+    border-radius: 10px;
 }
