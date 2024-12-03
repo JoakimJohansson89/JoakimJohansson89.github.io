@@ -107,16 +107,14 @@ pixel-border {
 }
 
 .retro-image-left {
-    position: absolute;
     bottom: 0;
     left: 0;
-    widht: 100px;
+    width: 100px;
     height: auto;
     margin: 20px;
 }
 
 .retro-image-right {
-    position: absolute;
     bottom: 0;
     right: 0;
     width: 100px;
