@@ -1,5 +1,5 @@
 document.getElementById("fetch-quote").addEventListener("click", function (){
-    fetch("https://joakimjohansson89-github-io-15.onrender.com/quote")
+    fetch("http://127.0.0.1:5000/quote")
     .then(response => response.json())
     .then(data => {
         // Update the quote in the paragraph

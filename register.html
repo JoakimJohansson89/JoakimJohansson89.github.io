@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Register Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline CSS to stack labels and inputs vertically */
+        #register_form label,
+        #register_form input {
+            display: block;
+            width: 100%; /* Full width for inputs */
+            margin-bottom: 10px;/* Space between elements */
+        }
+
+        #register_form button {
+            margin-top: 10px;
+        }
+
+        #register_form input {
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Register Account</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="gandalf.html">Gandalf Wisdom</a>
+        </nav>
+    </header>
+    <main>
+        <p>At the moment this section serves no real purpose other than allowing me to have a look at and fiddle with some database code.</p>
+        <p>Update: After several hours of trying to get the python-backend code to handle the register logic to work with the javascript and html pages,
+            I've come across a bug/issue that seems well established on forums like StackOverflow. Apparently somethings off with how CORS (a security feature in apps)
+            responds to requests from other domains (or something to that nature), it has a workaround with launching a proxy nginx server to bypass the CORS controll.
+            At the moment it feels like this "little code brainteaser" has escalated far and beyond, with implementation of more libs, more servers etc. As of now this 
+            create account/database project is at a halt. It simply takes too much time from other projects to be worth it. The code is still up on github if anyone has some supersmart one-liner to fix it.</p>
+      <section id="register_section">
+        <form id="register_form" action="/register" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+               
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+            <button id="register_btn" button type="button">Register</button>
+        </form>
+      </section>
+
+    </main>
+    <script src="register.js"></script>
+</body>
+</html>
+
+
+
